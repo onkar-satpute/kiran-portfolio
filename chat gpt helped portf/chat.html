@@ -1,0 +1,56 @@
+ <!-- Back to Top Button -->
+<button id="backToTop" title="Go to top"><i class="ri-arrow-up-line"></i></button>
+
+<!-- Typed JS -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<!-- ScrollReveal -->
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- Main JS -->
+<script>
+  // Typed.js - Typing Animation
+  new Typed('h2', {
+    strings: ['Software Engineer', 'Web Developer', 'Freelancer'],
+    typeSpeed: 50,
+    backSpeed: 30,
+    loop: true
+  });
+
+  // Smooth Scroll for Nav Links
+  document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId !== "#") {
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  // ScrollReveal Animations
+  ScrollReveal().reveal('.animated', {
+    delay: 300,
+    distance: '50px',
+    duration: 1000,
+    easing: 'ease-in-out',
+    origin: 'bottom',
+    reset: false
+  });
+
+  // Back to Top Button
+  const backToTopBtn = document.getElementById("backToTop");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
