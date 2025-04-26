@@ -136,6 +136,9 @@ align-items: center;
     border-radius: 50%;
     box-shadow: 0 0 20px #fff;
     overflow: hidden;
+    background-image: url(kiranimg.jpg);
+    background-size: cover;
+    background-position: center;
 }
  
 .home-img .img-box img {
